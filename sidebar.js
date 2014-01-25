@@ -3,7 +3,7 @@ $(document).ready(function() {
   	$.ajaxSetup({ cache: true }); // true will cache SDK locally between pages
   	$.getScript('//connect.facebook.net/en_US/all.js', function(){
     	FB.init({
-      	appId: '255548661275682',
+      	appId: '1457681984452177',
       	status     : true, // check login status
     	cookie     : true, // enable cookies to allow the server to access the session
     	xfbml      : true  // parse XFBML
@@ -50,7 +50,7 @@ $(document).ready(function() {
     });
   });
 
-	MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+/*	MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 	var observer = new MutationObserver(function(mutations, observer) {
 		// fired when a mutation occurs
 		console.log(mutations, observer);
@@ -59,7 +59,7 @@ $(document).ready(function() {
 	observer.observe($("#fb-root").get(0), {
 		subtree: true,
 		attributes: true
-	});
+	});*/
 
 });
 
@@ -103,7 +103,7 @@ function getFriendList() {
 	    		friendCount = response.data.length;
 	    		response.data.sort(sortFriendsByAZ);
 	    		for (i = 0; i < friendCount; i++) {
-	    			// console.log(response.data[i].name);
+	    			//console.log(response.data[i].name);
 	    			angular.element($("#panel")).scope().addFriend(response.data[i].name, response.data[i].picture.data.url, response.data[i].id).$apply();
 	    		}
 	    	} else {
@@ -124,10 +124,16 @@ function SidebarCtrl($scope) {
 		return $scope;
 	}
 
-	$scope.openSendDialog = function(userId) {
-		request = new Object();
+	$scope.openSendDialog = function(name,id) {
+/*		request = new Object();
 		request.method = 'send';
 		request.link = "http://www.google.ca";
-		FB.ui(request);
+		FB.ui(request);*/
+		url = "http://www.facebook.com/dialog/send?" +
+ 				 "app_id=1457681984452177" +
+ 				 "&link=http://www.uwaterloo.ca" +
+ 				 "&redirect_uri=http://localhost/fbhack2014/index.html" +
+ 				 "&to=" + id;
+  		window.open(url, "Send a message to " + name, "_blank");
 	}
 }

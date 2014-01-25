@@ -31,7 +31,7 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ -->
 			<div id="panel" ng-controller="SidebarCtrl">
 				<h3 id="myName"></h3>
 				<div id="friendList">
-					<li ng-repeat="friend in friends" ng-click="openSendDialog(friend.id)">
+					<li ng-repeat="friend in friends" ng-click="openSendDialog(friend.name,friend.id)">
 						<img class="friendPicture" ng-src="{{friend.picture}}"></span>
 						<span class="friendRow">{{friend.name}}</span>
 					</li>
