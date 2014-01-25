@@ -3,7 +3,7 @@ $(document).ready(function() {
   	$.ajaxSetup({ cache: true }); // true will cache SDK locally between pages
   	$.getScript('//connect.facebook.net/en_US/all.js', function(){
     	FB.init({
-      	appId: '1457681984452177',
+      	appId: '255548661275682',
       	status     : true, // check login status
     	cookie     : true, // enable cookies to allow the server to access the session
     	xfbml      : true  // parse XFBML

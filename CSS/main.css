@@ -25,27 +25,78 @@ src: url('../assets/Museo900-Regular.otf');
 }
 html{
   height: 100%;
+  margin:0 auto;
+  max-width: 1280px;
 }
 body {
-  min-height: 100%;
-			color: black; 
-			
-			background-color: white;
-			background-repeat:repeat;
+	min-height: 100%;
+	color: black; 	
+	background-color: white;
+	background-repeat:repeat;
+}
+
+		.sidebar {
+			float: right;
+			width: 240px;
+			height: 85%;
 		}
+		
+
+#myName {
+	font-size: 24px;
+	font-family: Museo-300;
+	font-weight: 300;
+}
+
+#panel {
+	width: 230px;
+	display: none;
+	font-family: Museo-100;
+	font-size: 18px;
+	height: 85%;
+	overflow-y: scroll;
+}
+
+#friendList {
+	height: auto;
+	overflow-y: scroll;
+	background-color: #fff;
+}
+
+#panel li {
+	list-style: none;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+#panel li:hover {
+	background-color: #3631bf;
+	color: #fefefe;
+	cursor: pointer;
+}
+
+.friendPicture {
+	height: 30px;
+	width: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
 
 		.container {
+			
 			margin-left: 10px;
-			margin-right: 10px;
+			margin-right: 270px;
 		}
 		
 		.borderprop{
-			 border: 1px black solid; 
+			 border: 0px black solid; 
 		}
 		
 		.chatbox{
-			width: 50%;
-			max-height: 100%;	
+			
+			margin-right: 180px;
+			height: 100%;	
 		}
 		.chattitle {
 			margin: 10px;
@@ -67,7 +118,7 @@ body {
 			margin: 10px;
 			padding: 5px;
 			background-color: rgb(242,56,90);
-			border-bottom: 15px solid rgb(233,241,223);
+			border-bottom: 15px solid rgb(255,255,255);
 			border-left: 15px solid rgba(0,0,0,0);
 			font-size: 18px;
 			font-family: Museo-100;
@@ -83,7 +134,7 @@ body {
 			font-size: 18px;
 			font-family: Museo-100;
 			transition: padding 1s;
-			 border-bottom: 15px solid rgb(233,241,223);
+			 border-bottom: 15px solid rgb(255,255,255);
 			 border-right: 15px solid rgba(0,0,0,0);
 		}
 		
@@ -99,14 +150,6 @@ body {
 		
 		
 		
-		.filebox{
-			
-			width: 40%;
-			top: 0;
-			float: right;
-			height: 85%;
-		
-		}
 		
 		
 		.sendbutton {
@@ -125,11 +168,23 @@ body {
 			font: 100%/120% Verdana, Arial, Helvetica, sans-serif;
 			background-color:  rgb(233,241,223);
 		}
+		.filebox{
+			float: right;
+			width: 170px;
+			height: 85%;
+		
+		}
 		
 		.display-none {
 			display: none;
 		}
 		
+		.filetitle {
+			margin: 10px;
+			padding: 10px;
+			font-size: 24px;
+			font-family: Museo-300;
+		}
 		
 		.fileinitem {
 			width: 100%;

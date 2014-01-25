@@ -1,12 +1,12 @@
-<html ng-app="phonecatApp">
+<html ng-app>
     <head>
     	<title>Facebook Hackthon</title>
 		<!--------------------------- Javascript and JQUERY ------------------------------->
-		<script src="JS/jquery-1.9.1.js"></script>
+		<script src="JS/jquery-2.1.0.min.js"></script>
 		<script src="JS/jquery-ui.js"></script>
 		<script src="JS/jquery.flippy.js"></script>
         <script src="JS/MetroJs.lt.min.js"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>		
 		<script type="text/x-mathjax-config">
 		  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 		</script>
@@ -23,25 +23,45 @@
 	<body onload="document.getElementById('inputbox').focus();">
 		<!-- When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ -->
+
+
+
+		<div class="sidebar borderprrop">
+			<div id="fb-root"></div>
+			<div id="panel" ng-controller="SidebarCtrl">
+				<h3 id="myName"></h3>
+				<div id="friendList">
+					<li ng-repeat="friend in friends" ng-click="openSendDialog(friend.id)">
+						<img class="friendPicture" ng-src="{{friend.picture}}"></span>
+						<span class="friendRow">{{friend.name}}</span>
+					</li>
+				</div>
+			</div>
+			<fb:login-button show-faces="true" width="200" max-row="1" ></fb:login-button>
+		</div>
+		
+
 		<!-- Weapper Container Div -->
 		<div class="container borderprop">
+		
 			<div class="filebox borderprop" >
-            <div id="fileinlist">
-                <div class="live-tile fileinblk two-tall two-wide" data-delay="0" data-initdelay="0" data-speed="1000" data-mode="flip" data-bounce="true" data-hover-delay="0" data-repeat="0" data-direction="vertical">
-                    <div>
-                        <input class="display-none activefill" type="file" />
-                        <input class="fileinitem activebutton" type="button"/>
-                    </div>
-                    <div class="accent fillinback">
-                        <span class="tile-title" onClick="$(this).closest('div.live-tile').hide();">CANCEL</span>
-                        <span class="top filename">FILENAME</span>
-                        
-                    </div>
-                </div>
-                
-            </div>
-            
+				<div class="filetitle borderprop">
+					File Trans
+				</div>
+				<div id="fileinlist">
+					<div class="live-tile fileinblk one-tall one-wide" data-delay="0" data-initdelay="0" data-speed="1000" data-mode="flip" data-bounce="true" data-hover-delay="0" data-repeat="0" data-direction="vertical">
+						<div>
+							<input class="display-none activefill" type="file" />
+							<input class="fileinitem activebutton" type="button"/>
+						</div>
+						<div class="accent fillinback">
+							<span class="tile-title" onClick="$(this).closest('div.live-tile').hide();">CANCEL</span>
+							<span class="top filename">FILENAME</span>
+						</div>
+					</div>
+				</div>
 			</div>
+			
 			<div class="chatbox borderprop" > 
 				<div class ="chattitle borderprop">
                 	This is the Chat Title {People}
@@ -76,10 +96,16 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 						<input id="submit" type="submit" onclick="document.getElementById('inputbox').rows = 1;" class="sendbutton">
 					</td></tr>
 				</table>
-				</div>
 			</div>
 			
-		</div>
+			
+			</div>
+			
+			
+		</div>	
+		
+		
+		<script src="sidebar.js"></script>
         <script src="JS/main.js"></script>
 	</body>
 </html>
