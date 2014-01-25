@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+font-family: Museo-100;
+src: url('../assets/Museo100-Regular.otf');
+}
+@font-face {
+font-family: Museo-300;
+src: url('../assets/Museo300-Regular.otf');
+}
+@font-face {
+font-family: Museo-500;
+src: url('../assets/Museo500-Regular.otf');
+}
+@font-face {
+font-family: Museo-700;
+src: url('../assets/Museo700-Regular.otf');
+}
+@font-face {
+font-family: Museo-900;
+src: url('../assets/Museo900-Regular.otf');
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+			color: black; 
+			
+			background-color: white;
+			background-repeat:repeat;
+		}
+
+		.container {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		
+		.borderprop{
+			 border: 1px black solid; 
+		}
+		
+		.chatbox{
+			width: 50%;
+			max-height: 100%;	
+		}
+		.chattitle {
+			margin: 10px;
+			padding: 10px;
+			font-size: 24px;
+			font-family: Museo-300;
+		}
+		
+		.chatlist{
+			max-height:79%;
+			margin: 10px;
+			#background-color: rgb(233,241,223);
+			overflow-y: scroll;
+			overflow-x: hidden;
+		}
+		.leftbubble{
+			width: 90%;
+			float: left;
+			margin: 10px;
+			padding: 5px;
+			background-color: rgb(242,56,90);
+			border-bottom: 15px solid rgb(233,241,223);
+			border-left: 15px solid rgba(0,0,0,0);
+			font-size: 18px;
+			font-family: Museo-100;
+		}
+		.rightbubble{
+			width: 90%;
+			float: right;
+			margin: 10px;
+			padding: 5px;
+			background-color:rgb(233,241,223);
+			background-image: url('../assets/bg-white-grainy.png');
+			opacity: 0;
+			font-size: 18px;
+			font-family: Museo-100;
+			transition: padding 1s;
+			 border-bottom: 15px solid rgb(233,241,223);
+			 border-right: 15px solid rgba(0,0,0,0);
+		}
+		
+		.active{
+			color: rgb(0,0,0,0);
+			
+		}
+		.chatinput {
+			margin: 10px;
+			
+		}
+		
+		
+		
+		
+		.filebox{
+			
+			width: 40%;
+			top: 0;
+			float: right;
+			height: 85%;
+		
+		}
+		
+		
+		.sendbutton {
+			background-color:rgb(74,217,217);
+			border-style: none; 
+			border-color: Transparent; 
+			height: 100%;
+			
+		}
+		
+		 textarea { 
+			border-style: none; 
+			border-color: Transparent; 
+			overflow: auto;     
+			overflow-y:hidden;
+			font: 100%/120% Verdana, Arial, Helvetica, sans-serif;
+			background-color:  rgb(233,241,223);
+		}
+		
+		.display-none {
+			display: none;
+		}
+		
+		
+		.fileinitem {
+			width: 100%;
+			height: 100%;
+			background-image: url('../assets/yellowbox.png');
+			background-color: rgb(245,165,3);
+			background-size: contain;
+			cursor: pointer;
+			border: none;
+		}
+		
+		.filename {
+			font-size: 48px;
+			text-align:center;
+		}
+		
+		.fillinback {
+			background-color: rgb(54,177,191);
+			color: rgb(233,241,223);
+			
+		}
