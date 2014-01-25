@@ -1,0 +1,40 @@
+#sidebar {
+	float: right;
+}
+
+#myName {
+	color: #f2385a;
+}
+
+#panel {
+	width: 240px;
+	display: none;
+	font-family: 'Andada', serif;
+	font-size: 14px;
+}
+
+#friendList {
+	height: 400px;
+	overflow-y: scroll;
+	background-color: #e9f1df;
+}
+
+#panel li {
+	list-style: none;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+#panel li:hover {
+	background-color: #3631bf;
+	color: #fefefe;
+	cursor: pointer;
+}
+
+.friendPicture {
+	height: 30px;
+	width: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
