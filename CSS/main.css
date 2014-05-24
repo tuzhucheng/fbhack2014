@@ -27,46 +27,54 @@ html{
   height: 100%;
   margin:0 auto;
   max-width: 1280px;
+  
 }
+
 body {
 	min-height: 100%;
 	color: black; 	
-	background-color: white;
+	
 	background-repeat:repeat;
+	
 }
 
 		.sidebar {
 			float: right;
-			width: 240px;
+			width: 340px /*240px*/;
 			height: 85%;
 		}
 		
 
 #myName {
 	font-size: 24px;
-	font-family: Museo-300;
+	font-family: Tahoma;
 	font-weight: 300;
+	margin-left: 10px;
+
 }
 
 #panel {
-	width: 230px;
+	width: 300 px /*230px*/;
 	display: none;
-	font-family: Museo-100;
+	font-family: Tahoma;
 	font-size: 18px;
 	height: 85%;
 	overflow-y: scroll;
+	color: rgb(74,217,217);
 }
 
 #friendList {
 	height: auto;
 	overflow-y: scroll;
 	background-color: #fff;
+	color: black;
 }
 
 #panel li {
 	list-style: none;
 	line-height: 40px;
 	vertical-align: middle;
+	background-color: #f0f0f0;
 }
 
 #panel li:hover {
@@ -84,9 +92,9 @@ body {
 }
 
 		.container {
-			
+			background-color: white;
 			margin-left: 10px;
-			margin-right: 270px;
+			margin-right: 370px; /*270*/
 		}
 		
 		.borderprop{
@@ -102,7 +110,8 @@ body {
 			margin: 10px;
 			padding: 10px;
 			font-size: 24px;
-			font-family: Museo-300;
+			font-family: Tahoma;
+		
 		}
 		
 		.chatlist{
@@ -113,26 +122,45 @@ body {
 			overflow-x: hidden;
 		}
 		.leftbubble{
-			width: 90%;
+			width: 51%;
 			float: left;
 			margin: 10px;
 			padding: 5px;
 			background-color: rgb(242,56,90);
 			border-bottom: 15px solid rgb(255,255,255);
 			border-left: 15px solid rgba(0,0,0,0);
+			-webkit-border-top-left-radius: 10px;
+			-webkit-border-top-right-radius: 10px;
+			-webkit-border-bottom-right-radius: 13px 25px;
+			-moz-border-radius-topleft: 10px;
+			-moz-border-radius-topright: 10px;
+			-moz-border-radius-bottomright: 13px 25px;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 13px 25px;
 			font-size: 18px;
-			font-family: Museo-100;
+			color: white;
+			font-family: Tahoma;
 		}
 		.rightbubble{
-			width: 90%;
+			width: 51%;
 			float: right;
 			margin: 10px;
 			padding: 5px;
+			-webkit-border-top-left-radius: 10px;
+			-webkit-border-top-right-radius: 10px;
+			-webkit-border-bottom-left-radius: 13px 25px;
+			-moz-border-radius-topleft: 10px;
+			-moz-border-radius-topright: 10px;
+			-moz-border-radius-bottomleft: 13px 25px;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-left-radius: 13px 25px;
 			background-color:rgb(233,241,223);
 			background-image: url('../assets/bg-white-grainy.png');
 			opacity: 0;
 			font-size: 18px;
-			font-family: Museo-100;
+			font-family: Tahoma;
 			transition: padding 1s;
 			 border-bottom: 15px solid rgb(255,255,255);
 			 border-right: 15px solid rgba(0,0,0,0);
@@ -170,9 +198,9 @@ body {
 		}
 		.filebox{
 			float: right;
-			width: 170px;
+			width: 0px;  /*170*/
 			height: 85%;
-		
+			font-family: Tahoma;
 		}
 		
 		.display-none {

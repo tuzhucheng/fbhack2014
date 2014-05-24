@@ -104,17 +104,71 @@ $(document).on({
 		}
 		
 		var first_press = false;
+		
+		//https://gist.github.com/hurjas/2660489
+		function timeStamp() {
+		// Create a date object with the current time
+		  var now = new Date();
+		 
+		// Create an array with the current month, day and time
+		
+		var currentMonth = now.getMonth() + 1;
+		
+		if(currentMonth < 10) {
+			currentMonth = '0' + currentMonth;
+		} else {
+			currentMonth = '' + currentMonth;
+		}
+		var innerdate = now.getDate();
+		if(innerdate < 10) {
+			innerdate = '0' + innerdate;
+		} else {
+			innerdate = '' + innerdate;
+		}
+		
+		
+		  var date = [  now.getFullYear(), currentMonth, innerdate];
+		 
+		// Create an array with the current hour, minute and second
+		  var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+		 
+		// Determine AM or PM suffix based on the hour
+		  var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+		 
+		// Convert hour from military time
+		  time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+		 
+		// If hour is 0, set it to 12
+		  time[0] = time[0] || 12;
+		 
+		// If seconds and minutes are less than 10, add a zero
+		  for ( var i = 1; i < 3; i++ ) {
+			if ( time[i] < 10 ) {
+			  time[i] = "0" + time[i];
+			}
+		  }
+		 
+		// Return the formatted string
+			
+			return date.join("-") + " " + time.join(":") + " " + suffix;
+		}
+
 		function handleKeyPress(e){
 		 var key=e.keyCode || e.which;
+	
 		  if (key==13){
-			 if(first_press) {
+					
+		    if(first_press) {
 				// they have already clicked once, we have a double
 				simulate(document.getElementById("submit"), "click");
+				//$("#inputbox").val('').focus();
+			
+				document.getElementById('inputbox').rows = 10;
 				first_press = false;
 			} else {
 				// this is their first key press
 				first_press = true;
-
+				
 				// if they don't click again in half a second, reset
 				window.setTimeout(function() { first_press = false; }, 500);
 			}
@@ -133,18 +187,19 @@ $(document).on({
 				$.trim(inputtext);
 				inputtext = inputtext.replace(/\r?\n/g, '<br />');
 				
+				inputtext = inputtext + timeStamp();
 				
 				// Replace our symbols with MathJax Syntax
 				inputtext = inputtext.replace('[', '\\(');
 				inputtext = inputtext.replace(']', '\\)');
 				
-				$('textarea.inputbox').val('');
+				// $('textarea.inputbox').val(''); done later
 				$('textarea.inputbox').focus();
 				$('<div class="rightbubble active"></div>').appendTo('div#chatlist');
 				$(".rightbubble").css({ overflow: '' });
-				 MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-				var math = document.getElementById("id"); 
-					MathJax.Hub.Queue(["Typeset", MathJax.Hub, math]); 
+				// MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+				//var math = document.getElementById("id"); 
+				//	MathJax.Hub.Queue(["Typeset", MathJax.Hub, math]); 
 
 				//$(".rightbubble").css({ backgroundColor: 'rgb(54,177,191)' });
 				$(".active").flippy({
@@ -162,7 +217,7 @@ $(document).on({
 						//$(".rightbubble").css({ filter: 'alpha(opacity=99)'});
 					}
 				});
-				
+				;
 				var myTimeVar = setInterval(
 						function() {
 							objDiv.scrollTop =  objDiv.scrollHeight;//objDiv.scrollHeight;
@@ -173,7 +228,7 @@ $(document).on({
 				function () {
 						clearInterval(myTimeVar);
 						clearInterval(myTimeVar2);
-					},400);
+					},800);
 					
 				$(".rightbubble").css({ padding: '10px' });
 					var objDiv = document.getElementById("chatlist");
@@ -183,7 +238,7 @@ $(document).on({
 					var myTimeVar2 = setInterval(
 							function() {
 					MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-					 $('textarea.inputbox').val('');
+					// $('textarea.inputbox').val(''); done later
 					},5);
 					
 				},
